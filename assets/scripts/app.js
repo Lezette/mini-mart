@@ -1,36 +1,49 @@
-const productList = {
-  products: [
-    {
-      title: "iPhone 11 Pro",
-      imageUrl: "https://unsplash.com/s/photos/iphone-11-pro-max",
-      price: 800.0,
-      description: "An helluva phone",
-    },
-    {
-      title: "Macbook Pro",
-      imageUrl: "",
-      price: 2500.0,
-      description: "That laptop from apple",
-    },
-    {
-      title: "DSLR Camera",
-      imageUrl: "",
-      price: 500.0,
-      description: "crazy camera",
-    },
-    {
-      title: "Mouse",
-      imageUrl: "",
-      price: 50.0,
-      description: "comes with a mousepad",
-    },
-    {
-      title: "Bag pack",
-      imageUrl: "",
-      price: 50.9,
-      description: "the attractive bag pack that's also long lasting",
-    },
-  ],
+class Product {
+  // title = "DEFAULT";
+  // imageUrl;
+  // price;
+  // description;
+
+  constructor(title, img, desc, price) {
+    this.title = title;
+    this.imageUrl = img;
+    this.description = desc;
+    this.price = price;
+  }
+}
+class ProductList {
+  products = [
+    new Product(
+      "iPhone 11 Pro",
+      "https://source.unsplash.com/AvwGVZWuLYM",
+      "An helluva phone",
+      800.0
+    ),
+    new Product(
+      "Macbook Pro",
+      "https://source.unsplash.com/z8lfwpQVXJo",
+      "That laptop from apple",
+      2500.0
+    ),
+    new Product(
+      "DSLR Camera",
+      "https://source.unsplash.com/e6zDjSwb7hs",
+      "crazy camera",
+      500.0
+    ),
+    new Product(
+      "Mouse",
+      "https://source.unsplash.com/xo-MJALGPrI",
+      "comes with a mousepad",
+      50.0
+    ),
+    new Product(
+      "Bag pack",
+      "https://source.unsplash.com/wKd76ZD3Drc",
+      "the attractive bag pack",
+      50.9
+    ),
+  ];
   render() {
     const renderHook = document.getElementById("app");
     const prodList = document.createElement("ul");
@@ -50,7 +63,5 @@ const productList = {
       prodList.append(prodEl);
     }
     renderHook.append(prodList);
-  },
-};
-
-productList.render();
+  }
+}
